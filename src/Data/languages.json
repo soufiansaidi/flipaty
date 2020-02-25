@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "code": "en",
+        "default": true,
+        "direction": "ltr"
+    },
+    {
+        "id": 2,
+        "code": "ar",
+        "default": false,
+        "direction": "rtl"
+    }
+]

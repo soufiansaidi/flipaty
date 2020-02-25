@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
@@ -14,27 +14,37 @@ import Checkout from './pages/Checkout'
 import NoMatch from './pages/NoMatch'
 
 // Contexts
-import { LanguageContextProvider } from './Context/LanguageContext'
 import { CartContextProvider } from './Context/CartContext'
 import { ProductsContextProvider } from './Context/ProductsContext'
+import { CategoriesContextProvider } from './Context/CategoriesContext'
+import { LanguageContextProvider } from './Context/LanguageContext'
 
-function App() {
+import { LanguageContext } from './Context/LanguageContext'
+
+const App = () => {
+
+  const {direction} = 'ltr'
+
   return (
     <LanguageContextProvider>
       <CartContextProvider>
-        <ProductsContextProvider>
+        <div className={direction}>
           <Router>
             <Header />
-            <Switch>
-                <Route exact path='/' component={Home} />
-                <Route path='/cart' component={Cart} />
-                <Route path='/checkout' component={Checkout} />
-                <Route path='/order-complete' component={Checkout} />
-                <Route component={NoMatch} />
-            </Switch>
+              <CategoriesContextProvider>
+                <ProductsContextProvider>
+                  <Switch>
+                      <Route exact path='/' component={Home} />
+                      <Route path='/cart' component={Cart} />
+                      <Route path='/checkout' component={Checkout} />
+                      <Route path='/order-complete' component={Checkout} />
+                      <Route component={NoMatch} />
+                  </Switch>
+                </ProductsContextProvider>
+              </CategoriesContextProvider>
             <Footer />
           </Router>
-        </ProductsContextProvider>
+        </div>
       </CartContextProvider>
     </LanguageContextProvider>
   );

@@ -1,0 +1,33 @@
+[
+    {
+        "id": 1,
+        "image": "http://placehold.it/250x280",
+        "title": "Product title 1",
+        "is_promotion": false,
+        "price": {"price": 200}
+    },{
+        "id": 2,
+        "image": "http://placehold.it/250x280",
+        "title": "Product title 2",
+        "is_promotion": true,
+        "price": {"price": 200, "promotion": 150}
+    },{
+        "id": 3,
+        "image": "http://placehold.it/250x280",
+        "title": "Product title 3",
+        "is_promotion": false,
+        "price": {"price": 200}
+    },{
+        "id": 4,
+        "image": "http://placehold.it/250x280",
+        "title": "Product title 4",
+        "is_promotion": true,
+        "price": {"price": 200, "promotion": 120}
+    },{
+        "id": 5,
+        "image": "http://placehold.it/250x280",
+        "title": "Product title 5",
+        "is_promotion": false,
+        "price": {"price": 200}
+    }
+]

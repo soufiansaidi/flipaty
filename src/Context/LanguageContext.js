@@ -19,8 +19,8 @@ export const LanguageContextProvider = props => {
     const checkCurrent = () => {
         let currentLanguage = checkLocalStorage('currentLanguage')
         let currentDirection = checkLocalStorage('currentDirection')
-
-        if(!currentLanguage && !currentDirection){
+        
+        if(currentLanguage === 'null' && currentDirection === 'null'){
             languages.map(language => {
                 if(language['default']){
                     currentLanguage = language['code']

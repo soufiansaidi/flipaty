@@ -4,5 +4,5 @@ export const Url = 'https://flipaty.com/api'
 export const checkLocalStorage = (item) => {
     let check = localStorage.getItem(item)
     if(check) return check
-    return false
+    return null
 }
